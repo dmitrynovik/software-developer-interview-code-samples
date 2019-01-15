@@ -1,4 +1,6 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Diagnostics;
+using System.Globalization;
 
 namespace CodeSamples.Bad
 {
@@ -30,6 +32,18 @@ namespace CodeSamples.Bad
         {
             // ... some code here ...
             return new FrequentFlyerModel();
+        }
+
+        public void ExecuteSafely(Action action)
+        {
+            try
+            {
+                action();
+            }
+            catch (Exception e)
+            {
+                Trace.TraceError(e.ToString());
+            }
         }
     }
 }

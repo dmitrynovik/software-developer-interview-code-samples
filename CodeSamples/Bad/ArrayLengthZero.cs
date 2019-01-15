@@ -4,6 +4,9 @@
     {
         public string[] Names { get; set; }
 
-        public bool AreThereAnyNames => Names?.Length != 0;
+        public bool AreThereAnyNames()
+        {
+            return Names?.Length != 0;
+        }
     }
 }

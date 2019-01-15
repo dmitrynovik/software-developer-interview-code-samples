@@ -8,7 +8,7 @@ namespace CodeSamples.Good
 
         public void AddProductCode(string code)
         {
-            if (string.IsNullOrWhiteSpace(code))
+            if (!string.IsNullOrWhiteSpace(code))
             {
                 ProductCodes.Add(code);
             }
